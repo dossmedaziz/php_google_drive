@@ -1,0 +1,17 @@
+{
+    "name": "doss/google-drive",
+    "autoload": {
+        "psr-4": {
+            "Doss\\GoogleDrive\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dossmedaziz",
+            "email": "dossaziz4@gmail.com"
+        }
+    ],
+    "require": {
+        "google/apiclient": "^2.12.1"
+    }
+}
