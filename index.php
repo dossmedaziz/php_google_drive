@@ -2,7 +2,8 @@
 // include autoload.php file
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/GoogleClient.php';
-
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 // check if file is passed as argument
 try {
     if (!isset($argv[1])) {
@@ -10,7 +11,7 @@ try {
     }
     $googleClient = GoogleClient::getInstance();
     $googleClient->setGoogleCredentials(__DIR__ . '/src/config/credentials.json');
-    $googleClient->setFolderId("1CAkn_Wc8CjTuGrSMoKd2Nsaj1l-5kvgQ");
+    $googleClient->setFolderId($_ENV['FOLDER_ID']);
     $googleClient->upload([
         'file' => $argv[1],
         'name' => basename($argv[1])
