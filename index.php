@@ -10,7 +10,7 @@ try {
         throw new Exception("File Path is missing\n");
     }
     $googleClient = GoogleClient::getInstance();
-    $googleClient->setGoogleCredentials(__DIR__ . '/src/config/credentials.json');
+    $googleClient->setGoogleCredentials(__DIR__ . '/credentials.json');
     $googleClient->setFolderId($_ENV['FOLDER_ID']);
     $googleClient->upload([
         'file' => $argv[1],
