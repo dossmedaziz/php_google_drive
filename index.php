@@ -19,6 +19,7 @@ try {
         'name' => basename($argv[1])
     ]);
 } catch (Exception $e) {
-    echo $e->getMessage();
+    $error = $e->getMessage() . "\n";
+    file_put_contents(__DIR__ . '/logs/drive.log', $error, FILE_APPEND);
     exit;
 }
