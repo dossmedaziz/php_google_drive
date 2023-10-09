@@ -20,6 +20,7 @@ try {
     ]);
 } catch (Exception $e) {
     $error = $e->getMessage() . "\n";
+    $error .= date('Y-m-d H:i:s') . "\n";
     file_put_contents(__DIR__ . '/logs/drive.log', $error, FILE_APPEND);
     exit;
 }
